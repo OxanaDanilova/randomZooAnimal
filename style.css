@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(67, 235, 139);
+}
+h1 {
+  text-align: center;
+  background-color: rgb(15, 87, 181);
+  color: white;
+  padding: 1rem;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 60%;
+}
+
+.card {
+  width: 80%;
+  max-width: 500px;
+  border: 2px solid green;
+  border-radius: 5px;
+  margin: 2rem auto;
+  padding: 0.8rem;
+}
+
+p {
+  color: darkgreen;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-bottom: 1px solid gray;
+}
+
+p > span {
+  color: rgb(15, 87, 181);
+}
+
+.next-btn {
+  width: 220px;
+  font-size: 1.7rem;
+  display: block;
+  margin: 1rem auto;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
