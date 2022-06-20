@@ -27,9 +27,12 @@ const renderFunc = ({
   const life = document.createElement("p");
   life.innerHTML = `Lifespan: <span>${lifespan} years</span>`;
   cardText.append(h1, animalType, location, weight, length, life);
+  const cardImage = document.createElement("div");
+  cardImage.classList.add("card-image");
   const img = document.createElement("img");
   img.src = image_link;
-  card.append(cardText, img);
+  cardImage.append(img);
+  card.append(cardText, cardImage);
   const btnNext = document.createElement("button");
   btnNext.textContent = "Next";
   btnNext.classList.add("next-btn");
