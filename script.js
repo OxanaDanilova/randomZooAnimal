@@ -1,3 +1,4 @@
+const arrAnimals = [];
 const renderFunc = ({
   name,
   latin_name,
@@ -41,13 +42,20 @@ const renderFunc = ({
 };
 
 const showRandomAnimal = () => {
-  const url = "https://zoo-animal-api.herokuapp.com/animals/rand";
+  if (!arrAnimals.length) {
+    const url = "https://zoo-animal-api.herokuapp.com/animals/rand/10";
 
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      renderFunc(data);
-    });
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        data.forEach((animal) => arrAnimals.push(animal));
+        const animal = arrAnimals.pop();
+        renderFunc(animal);
+      });
+  } else {
+    const animal = arrAnimals.pop();
+    renderFunc(animal);
+  }
 };
 showRandomAnimal();
